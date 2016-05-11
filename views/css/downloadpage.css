@@ -1,0 +1,11 @@
+/*ADMIN */
+.icon-AdminDownloadPage:before {
+	content:"\f019";
+}
+
+/* FRONT */
+
+#select_download_product{
+	margin-bottom:10px;
+	margin-top:10px;
+}

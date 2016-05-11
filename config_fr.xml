@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>downloadpage</name>
+	<displayName><![CDATA[Module page t&eacute;l&eacute;chargement]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Ajoute une page t&eacute;l&eacute;chargement en front, avec un syst&egrave;me d&#039;administration backoffice]]></description>
+	<author><![CDATA[Jeremie Zipfel]]></author>
+	<tab><![CDATA[front_office_features]]></tab>
+	<confirmUninstall><![CDATA[Voulez-vous vraiment désinstaller le module Page Téléchargement ?]]></confirmUninstall>
+	<is_configurable>0</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>
