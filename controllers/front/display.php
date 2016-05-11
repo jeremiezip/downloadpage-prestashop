@@ -12,21 +12,21 @@ class downloadpagedisplayModuleFrontController extends ModuleFrontController
   		$this->display_column_left = false;
   		$this->display_column_right = false;
 
-		  parent::initContent();
+		parent::initContent();
+		// VIEW LISTE DOWNLOAD GENERAUX
+	      	$this->viewDownloadList();
+	      	// DISPLAY IF AJAX
+	      	if (Tools::getValue('id_product')){
+	 	   $this->ajaxDownloadProduct();
+	      	}
+	      	/*select ref product pour al liste */
+	      	$products = DownloadModule:: getAllRefProduct();
 
-      // VIEW LISTE DOWNLOAD GENERAUX
-      $this->viewDownloadList();
-      // DISPLAY IF AJAX
-      if (Tools::getValue('id_product')){
-        $this->ajaxDownloadProduct();
-      }
-      /*select ref product pour al liste */
-      $products = DownloadModule:: getAllRefProduct();
-
-     /* display des téléchargements généraux */
-      $this->context->smarty->assign(array('products' => $products));     
-      // VIEW GENERAL FRONT
-      $this->setTemplate('downloadpage_front.tpl');      
+     		/* display des téléchargements généraux */
+		$this->context->smarty->assign(array('products' => $products));     
+      		// VIEW GENERAL FRONT
+      		$this->setTemplate('downloadpage_front.tpl');      
+	
 	}
 
   public function setMedia(){
@@ -40,7 +40,6 @@ class downloadpagedisplayModuleFrontController extends ModuleFrontController
     $downloads = DownloadModule::getDownload((int)$this->context->language->id,(int)$this->context->shop->id);
     $chemin_img = $this->context->link->getModuleLink('downloadpage', 'display');
 
-
     /* display des téléchargements généraux */
     $this->context->smarty->assign(array('downloads' => $downloads,
                                     'chemin_img' => $chemin_img));
@@ -49,7 +48,7 @@ class downloadpagedisplayModuleFrontController extends ModuleFrontController
   public function ajaxDownloadProduct(){
     $product = new Product(Tools::getValue('id_product'), false, (int)$this->context->language->id,(int)$this->context->shop->id);
 
-      $this->context->smarty->assign(array(   'attachments' => (($product->cache_has_attachments) ? $product->getAttachments((int)$this->context->language->id) : array()),
+    $this->context->smarty->assign(array(   'attachments' => (($product->cache_has_attachments) ? $product->getAttachments((int)$this->context->language->id) : array()),
         'ajax' => 1
     ));
 
