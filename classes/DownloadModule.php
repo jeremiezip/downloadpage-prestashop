@@ -22,14 +22,14 @@ class DownloadModule extends ObjectModel {
 		'table' => 'download_module',
 		'primary' => 'id_download_module',
 		'fields' => array(
-            'description' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
-            'url' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
-            'type_fichier' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
-            'nom_fichier' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
-            'lang'  =>                  array('type' => self::TYPE_INT, 'required' => true),
-            'date_add' =>       array('type' => self::TYPE_DATE, 'validate' => 'isDate', 'required' => true),
-            'active' =>            array('type' => self::TYPE_BOOL,'validate' => 'isBool', 'required' => true),
-        ),
+	            'description' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
+	            'url' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
+	            'type_fichier' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
+	            'nom_fichier' =>                array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName', 'required' => true, 'size' => 128),
+	            'lang'  =>                  array('type' => self::TYPE_INT, 'required' => true),
+	            'date_add' =>       array('type' => self::TYPE_DATE, 'validate' => 'isDate', 'required' => true),
+	            'active' =>            array('type' => self::TYPE_BOOL,'validate' => 'isBool', 'required' => true),
+	        ),
 	);
 
     public static function getDownload($id_lang){
